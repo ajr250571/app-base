@@ -4,6 +4,8 @@
 	export let value = '';
 	export let label = '';
 	export let error = '';
+	export let cols = 40;
+	export let rows = 4;
 
 	const identifier = uuidv4();
 </script>
@@ -12,13 +14,16 @@
 	<label for={identifier} class="label">
 		<span class="label-text text-primary font-bold">{label}</span>
 	</label>
-	<input
+
+	<textarea
 		id={identifier}
-		type="email"
 		bind:value
-		class="input input-bordered input-primary w-full max-w-xs"
+		class="textarea textarea-primary"
 		placeholder={label}
+		{cols}
+		{rows}
 	/>
+
 	{#if error}
 		<div class="alert alert-warning shadow-lg py-1 my-2">
 			<div>
