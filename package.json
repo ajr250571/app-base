@@ -2,7 +2,7 @@
 	"name": "app-base",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 4000",
 		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/bcrypt": "^5.0.0",
+		"bcrypt": "^5.0.1",
 		"daisyui": "^2.19.0",
 		"uuid": "^8.3.2"
 	}

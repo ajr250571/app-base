@@ -18,10 +18,10 @@
 		bind:value
 		class="input input-bordered input-primary w-full max-w-xs"
 		placeholder={label}
-		pattern={'(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}'}
+		pattern={'(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}'}
 	/>
 	<span class="text-info"
-		>Debe contener al menos un número, una letra mayúscula y una minúscula, y al menos 6 o más
+		>Debe contener al menos un número, una letra mayúscula y una minúscula, y al menos 8 o más
 		caracteres.</span
 	>
 	{#if error}

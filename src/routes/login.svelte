@@ -1,7 +1,8 @@
 <script>
 	import InputEmail from '$lib/components/base/input-email.svelte';
 	import InputPassword from '$lib/components/base/input-password.svelte';
-	import { getUserValid } from '$lib/services/user';
+	// import { getUserValid } from '$lib/services/user';
+	import bcrypt from 'bcrypt';
 
 	let fields = {
 		email: '',
@@ -23,16 +24,19 @@
 		} else {
 			errors.email = '';
 		}
-		if (fields.password.trim().length < 6) {
-			errors.password = 'El Password debe tener como minimo 6 caracteres.';
+		if (fields.password.trim().length < 8) {
+			errors.password = 'El Password debe tener como minimo 8 caracteres.';
 			valid = false;
 		} else {
 			errors.password = '';
 		}
 
 		if (valid) {
+			const hash = bcrypt.hashSync(fields.password, 10);
 			console.log('Valid', fields);
-			console.log(getUserValid(fields.email, fields.password));
+			console.log(hash);
+
+			// console.log(getUserValid(fields.email, fields.password));
 		}
 	}
 </script>

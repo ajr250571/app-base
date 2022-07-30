@@ -1,10 +1,20 @@
-export function getUserValid(email = '', password = '') {
+export async function getUserValid(email = '', password = '') {
 	let isValid: boolean;
 	isValid = false;
-	if (email == 'arodriguez@panpacksa.com.ar') {
-		if (password == 'Fico11140556') {
-			isValid = true;
-		}
-	}
+	// Fetch al servidor
+	/*
+	const res = await fetch('https://localhost:4000/user/valid', {
+		method: 'POST',
+		credentials: 'same-origin',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			email,
+			password
+		})
+	});
+	*/
+	isValid = true;
 	return isValid;
 }
